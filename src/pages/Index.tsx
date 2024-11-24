@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BarChart3, Brain, Mail, PieChart, Users } from "lucide-react";
+import { BarChart3, Brain, Mail, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -15,8 +16,8 @@ const Index = () => {
             Penny helps SMEs boost sales performance with AI-powered insights, automated outreach, and intelligent lead scoring.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Start Free Trial
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link to="/signup">Start Free Trial</Link>
             </Button>
             <Button size="lg" variant="outline">
               Watch Demo
