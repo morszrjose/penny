@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import CRMSettings from "./pages/CRMSettings";
 import Leads from "./pages/Leads";
 import Campaigns from "./pages/Campaigns";
+import Pipeline from "./pages/Pipeline";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +30,7 @@ const App = () => (
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="leads" element={<Leads />} />
-            <Route path="pipeline" element={<div>Pipeline page coming soon</div>} />
+            <Route path="pipeline" element={<Pipeline />} />
             <Route path="campaigns" element={<Campaigns />} />
             <Route path="settings" element={<CRMSettings />} />
           </Route>
