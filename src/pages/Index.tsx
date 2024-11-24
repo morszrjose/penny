@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BarChart3, Brain, Mail, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -19,7 +21,7 @@ const Index = () => {
             <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
               <Link to="/signup">Start Free Trial</Link>
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" onClick={() => navigate('/dashboard')}>
               Watch Demo
             </Button>
           </div>
