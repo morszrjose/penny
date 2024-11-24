@@ -10,6 +10,7 @@ import Onboarding from "./pages/Onboarding";
 import { DashboardLayout } from "./components/layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import CRMSettings from "./pages/CRMSettings";
+import Leads from "./pages/Leads";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
-            <Route path="leads" element={<div>Leads page coming soon</div>} />
+            <Route path="leads" element={<Leads />} />
             <Route path="pipeline" element={<div>Pipeline page coming soon</div>} />
             <Route path="campaigns" element={<div>Campaigns page coming soon</div>} />
             <Route path="settings" element={<CRMSettings />} />
