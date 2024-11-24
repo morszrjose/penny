@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import SignUp from "./pages/SignUp";
 import VerifyEmail from "./pages/VerifyEmail";
 import Onboarding from "./pages/Onboarding";
+import { DashboardLayout } from "./components/layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,13 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="leads" element={<div>Leads page coming soon</div>} />
+            <Route path="pipeline" element={<div>Pipeline page coming soon</div>} />
+            <Route path="campaigns" element={<div>Campaigns page coming soon</div>} />
+            <Route path="settings" element={<div>Settings page coming soon</div>} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
