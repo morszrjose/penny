@@ -10,6 +10,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { NotificationsMenu } from "../notifications/NotificationsMenu";
 
 const sidebarNavItems = [
   {
@@ -79,6 +80,13 @@ export function DashboardLayout() {
       </div>
 
       <div className="pl-64">
+        <div className="border-b">
+          <div className="flex h-16 items-center px-8">
+            <div className="ml-auto flex items-center space-x-4">
+              <NotificationsMenu />
+            </div>
+          </div>
+        </div>
         <main className="min-h-screen max-w-[1440px] p-8">
           <Outlet />
         </main>
