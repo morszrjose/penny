@@ -33,7 +33,7 @@ const sidebarNavItems = [
     href: "/dashboard/campaigns",
   },
   {
-    title: "Settings",
+    title: "CRM Settings",
     icon: Settings,
     href: "/dashboard/settings",
   },
@@ -44,7 +44,6 @@ export function DashboardLayout() {
 
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
       <div className="fixed left-0 top-0 flex h-screen w-64 flex-col border-r bg-background">
         <div className="p-6">
           <Link to="/dashboard" className="flex items-center gap-2">
@@ -79,7 +78,6 @@ export function DashboardLayout() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="pl-64">
         <main className="min-h-screen max-w-[1440px] p-8">
           <Outlet />

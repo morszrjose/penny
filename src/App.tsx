@@ -9,6 +9,7 @@ import VerifyEmail from "./pages/VerifyEmail";
 import Onboarding from "./pages/Onboarding";
 import { DashboardLayout } from "./components/layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
+import CRMSettings from "./pages/CRMSettings";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ const App = () => (
             <Route path="leads" element={<div>Leads page coming soon</div>} />
             <Route path="pipeline" element={<div>Pipeline page coming soon</div>} />
             <Route path="campaigns" element={<div>Campaigns page coming soon</div>} />
-            <Route path="settings" element={<div>Settings page coming soon</div>} />
+            <Route path="settings" element={<CRMSettings />} />
           </Route>
         </Routes>
       </BrowserRouter>
