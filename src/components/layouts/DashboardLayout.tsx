@@ -8,9 +8,18 @@ import {
   Mail,
   Settings,
   LogOut,
+  User,
 } from "lucide-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { NotificationsMenu } from "../notifications/NotificationsMenu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const sidebarNavItems = [
   {
@@ -79,15 +88,36 @@ export function DashboardLayout() {
         </div>
       </div>
 
-      <div className="pl-64">
-        <div className="border-b">
-          <div className="flex h-16 items-center px-8">
-            <div className="ml-auto flex items-center space-x-4">
+      <div className="flex-1 pl-64">
+        <header className="fixed top-0 right-0 left-64 z-50 border-b bg-background">
+          <div className="flex h-16 items-center justify-between px-8">
+            <h1 className="text-xl font-semibold capitalize">
+              {location.pathname.split("/").pop()?.replace("-", " ") || "Dashboard"}
+            </h1>
+            <div className="flex items-center space-x-4">
               <NotificationsMenu />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
-        </div>
-        <main className="min-h-screen max-w-[1440px] p-8">
+        </header>
+        <main className="w-full p-8 mt-16">
           <Outlet />
         </main>
       </div>
